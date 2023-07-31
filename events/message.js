@@ -1,23 +1,23 @@
 module.exports = async (client, message) => {
-    if (!message.guild) return;
+  if (!message.guild) return;
 
-    client.botGuilds.ensure(message.guild.id, { raidChannel: null, prefix: "r!" });
+  client.botGuilds.ensure(message.guild.id, {raidChannel: null, prefix: 'r!'});
 
-    let prefix = client.botGuilds.get(message.guild.id).prefix;
+  const {prefix} = client.botGuilds.get(message.guild.id);
 
-    if (message.author.bot) return;
-    if (message.content.indexOf(prefix) !== 0) return;
+  if (message.author.bot) return;
+  if (message.content.indexOf(prefix) !== 0) return;
 
-    client.prefix = prefix;
+  client.prefix = prefix;
 
-    const args = message.content
-        .slice(prefix.length)
-        .trim()
-        .split(/ +/g);
-    const command = args.shift().toLowerCase();
+  const args = message.content
+    .slice(prefix.length)
+    .trim()
+    .split(/ +/g);
+  const command = args.shift().toLowerCase();
 
-    const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
-    if (!cmd) return;
+  const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
+  if (!cmd) return;
 
-    cmd.run(client, message, args);
+  cmd.run(client, message, args);
 };
