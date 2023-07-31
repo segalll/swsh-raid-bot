@@ -1,4 +1,7 @@
 
-<h1 align="center">Sword and Shield Raid Bot for Discord</h1>
+# swsh-raid-bot
 
-<h5 align="center">This is a bot that automates the process of finding or hosting raids for Pokémon Sword and Shield.</h5>
+[![Actions Status](https://github.com/segalll/swsh-raid-bot/workflows/build/badge.svg)](https://github.com/segalll/swsh-raid-bot/actions)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+A bot that automates the process of finding or hosting raids for Pokémon Sword and Shield.
